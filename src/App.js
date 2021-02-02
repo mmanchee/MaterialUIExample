@@ -1,13 +1,45 @@
+import React, { useState } from 'react';
 import './App.css';
-import { Button, ButtonGroup } from '@material-ui/core';
-import { Icons, Save } from '@material-ui/icons';
+import { Button, ButtonGroup, Checkbox } from '@material-ui/core';
+import { Icons, Save, Delete } from '@material-ui/icons';
+
+function CheckBoxExample() {
+  const [ checked, setChecked ] = useState(true)
+  return (
+    <div>
+      <Checkbox 
+        checked={checked}
+        onChange={(e) => setChecked(e.target.checked)}
+        color='secondary'
+      />
+      <Checkbox 
+        checked={checked}
+        onChange={(e) => setChecked(e.target.checked)}
+        color='primary'
+        disabled
+      />
+      <Checkbox 
+        checked={checked}
+        onChange={(e) => setChecked(e.target.checked)}
+        color='primary'
+        inputProps={{
+          'aria-label': 'secondary checkbox'
+        }}
+      />
+    </div>
+
+  )
+}
 
 function App() {
   return (
     <div className="App">
-      <ButtonGroup>
+      <CheckBoxExample />
+      <ButtonGroup> {/*Links buttons together*/}
+        {/* startIcon adds Icons at the start */}
+        {/* endIcon adds Icons at the end */}
         <Button 
-          startIcon={<Save />}
+          startIcon={<Save />}  
           size='small'
           variant='contained' 
           color='primary' 
@@ -16,7 +48,7 @@ function App() {
         </Button>
         <Button 
           startIcon={<Save />}
-          endIcon={<Save />}
+          endIcon={<Delete />}  
           size='large'
           variant='contained' 
           color='secondary' 
