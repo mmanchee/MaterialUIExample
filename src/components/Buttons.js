@@ -1,6 +1,22 @@
 import React from 'react'
-import { Button, ButtonGroup, Checkbox } from '@material-ui/core';
+import { Button, ButtonGroup, Checkbox, makeStyles } from '@material-ui/core';
 import { Icons, Save, Delete } from '@material-ui/icons';
+
+const useStyles = makeStyles({
+  root: {
+    background: 'linear-gradient(45deg, #333, #999)',
+    border: 0,
+    margin: 15,
+    borderRadius: 15,
+    color: 'green',
+    padding: '0 30px'
+  }
+})
+
+function ButtonStyled() {
+  const classes = useStyles();
+  return <Button className={classes.root} >Test Styled Button</Button>
+}
 
 const Buttons = () => {
   return (
@@ -34,6 +50,7 @@ const Buttons = () => {
         background='blue' >
         Hello World
       </Button>
+      <br />
       <Button 
         size='large'
         style={{
@@ -44,6 +61,8 @@ const Buttons = () => {
         background='blue' >
         Hello World
       </Button>
+      <br />
+      <ButtonStyled />
     </div>
   )
 }
