@@ -9,6 +9,7 @@ import Buttons from './components/Buttons';
 import TextFields from './components/TextFields';
 import Typographies from "./components/Typographies";
 import Grids from './components/Grids';
+import AppBarComp from './components/AppBarComp';
 
 const theme = createMuiTheme({
   typography: {
@@ -33,6 +34,7 @@ function App() {
       {/* sm = small, md = medium, lg = large, xd = mobile */}
       <Container maxWidth='xd'>
         <div className="App">
+          <AppBarComp />
           <Typographies />
           <Checkboxes />
           <Buttons />
