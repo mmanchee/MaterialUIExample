@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import { Container } from '@material-ui/core';
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import { orange, green } from '@material-ui/core/colors';
 
@@ -28,12 +29,14 @@ const theme = createMuiTheme({
 function App() {
   return (
     <ThemeProvider theme={theme}>
-      <div className="App">
-        <Typographies />
-        <Checkboxes />
-        <Buttons />
-        <TextFields />
-      </div>
+      <Container maxWidth='xd'>
+        <div className="App">
+          <Typographies />
+          <Checkboxes />
+          <Buttons />
+          <TextFields />
+        </div>
+      </Container>
     </ThemeProvider>
   );
 }
